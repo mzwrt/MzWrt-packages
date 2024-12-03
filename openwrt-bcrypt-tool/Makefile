@@ -6,7 +6,7 @@ PKG_RELEASE:=2
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/shoenig/bcrypt-tool.git
-PKG_SOURCE_VERSION:=952d8e7e75b3ae4b882a277283fff37a22ce32ac
+PKG_SOURCE_VERSION:=null
 PKG_MIRROR_HASH:=skip
 
 PKG_LICENSE:=GPL-2.0-only

@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=wxbase
-PKG_VERSION:=3.2.6
+PKG_VERSION:=3.2.5
 PKG_RELEASE:=2
 
 PKG_SOURCE:=wxWidgets-$(PKG_VERSION).tar.bz2

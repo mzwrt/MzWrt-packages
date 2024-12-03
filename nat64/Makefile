@@ -5,7 +5,7 @@ PKG_NAME:=nat64
 PKG_SOURCE_URL:=https://github.com/primis/nat64.git
 PKG_SOURCE_DATE:=2021-06-30
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=1ba5895ff5f227fe9efd2d3765c4cdde6ac36899
+PKG_SOURCE_VERSION:=null
 
 PKG_MAINTAINER:=Hans Dedecker <dedeckeh@gmail.com>
 PKG_LICENSE:=GPL-2.0

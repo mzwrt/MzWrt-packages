@@ -7,7 +7,7 @@ PKG_RELEASE:=2
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/rozhuk-im/msd.git
 PKG_SOURCE_DATE:=2024-04-29
-PKG_SOURCE_VERSION:=8b2664a982b3af48cd553ce27710dbe1a033c38c
+PKG_SOURCE_VERSION:=null
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
