@@ -1,12 +1,4 @@
-From fbef13f23e43216da7ece9c090153ff80adf7525 Mon Sep 17 00:00:00 2001
-From: Denys Fedoryshchenko <denys.f@collabora.com>
-Date: Wed, 11 Sep 2024 01:39:42 +0300
-Subject: [PATCH] fix(musl/l2tp_session_free): Fix, likely typo
 
-It is logical, that function should remain same,
-not changed to free.
-
-Signed-off-by: Denys Fedoryshchenko <denys.f@collabora.com>
 ---
  accel-pppd/ctrl/l2tp/l2tp.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
