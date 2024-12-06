@@ -18,7 +18,7 @@ define Package/$(PKG_NAME)
 	SECTION:=utils
 	CATEGORY:=Utilities
 	TITLE:=Simple Task Manager
-	DEPENDS:=+procd +script-utils +coreutils-stty
+	DEPENDS:=+procd +script-utils +coreutils +coreutils-stty
 	PKGARCH:=all
 endef
 
