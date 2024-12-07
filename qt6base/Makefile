@@ -103,6 +103,7 @@ CMAKE_OPTIONS+= \
 	-DFEATURE_gui=$(if $(CONFIG_PACKAGE_libQt6Gui),ON,OFF) \
 	-DFEATURE_fontconfig=OFF \
 	-DFEATURE_system_freetype=ON \
+	-DFEATURE_xkbcommon=OFF \
 	-DFEATURE_accessibility=OFF \
 	-DFEATURE_harfbuzz=OFF \
 	-DFEATURE_gif=OFF \
