@@ -17,7 +17,7 @@ start_vntcli() {
                    clibin=/tmp/vnt-cli
                 fi
                 echo "$(date '+%Y-%m-%d %H:%M:%S') vnt-cli : vnt-cli_${cpucore}开始启动" >>/tmp/vnt-cli.log
-		echo "$(date '+%Y-%m-%d %H:%M:%S') vnt-cli : 若启动失败，请打开 状态 - 系统日志 找到vnt相关的字眼查看启动失败错误的原因" >>/tmp/vnts.log
+		echo "$(date '+%Y-%m-%d %H:%M:%S') vnt-cli : 若启动失败，请打开 状态 - 系统日志 找到vnt相关的字眼查看启动失败错误的原因" >>/tmp/vnt-cli.log
                 [ -z "`opkg list-installed | grep kmod-tun`" ] && echo "$(date '+%Y-%m-%d %H:%M:%S') vnt-cli : 未安装kmod-tun模块，	请确定安装好kmod-tun " >>/tmp/vnt-cli.log 
                 path=$(dirname "$clibin")
                 if [ -f /tmp/vnt-cli ] && [ "${path:0:4}" != "/tmp" ] ;then
@@ -29,10 +29,11 @@ start_vntcli() {
                    if [ "$(($(/tmp/vnt-cli -h 2>&1 | wc -l)))" -gt 3 ] && [ "$result" -gt 500 ] ; then
                      mv -f /tmp/vnt-cli "$clibin"
                      else
+		     [ -z "$size" ] && [ "$(($(/tmp/vnt-cli -h 2>&1 | wc -l)))" -gt 3 ] && mv -f /tmp/vnt-cli "$clibin"
                      echo "$(date '+%Y-%m-%d %H:%M:%S') vnt-cli : 无法替换，上传的程序不完整或自定义路径的可用空间不足，当前空间剩余${size}kb" >>/tmp/vnt-cli.log
                    fi
                 fi
-                if [ ! -f "$clibin" ] && [ "$size" -lt 4000 ] ; then
+                if [ ! -f "$clibin" ] && [ "$size" -lt 4000 ] && [ ! -z "$size" ] ; then
                     echo "$(date '+%Y-%m-%d %H:%M:%S') vnt-cli : 自定义程序路径的可用空间不足，当前可用空间剩余${size}kb,自动切换为内存/tmp/vnt-cli" >>/tmp/vnt-cli.log
                     sed -i "/clibin/c option clibin '/tmp/vnt-cli' " /etc/config/vnt 
                     clibin=/tmp/vnt-cli
